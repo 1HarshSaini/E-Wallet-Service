@@ -1,3 +1,6 @@
 rootProject.name = 'ewallet'
 
-include 'user-service', 'wallet-service', 'transaction-service', 'notification-service'
+include 'notification-service'
+include 'transaction-service'
+include 'user-service'
+include 'wallet-service'
