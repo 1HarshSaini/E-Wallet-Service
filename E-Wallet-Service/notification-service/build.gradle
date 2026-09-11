@@ -1,0 +1,5 @@
+// Base plugins, Java toolchain, and shared dependencies are inherited from the
+// root build.gradle (allprojects block). This module adds mail support.
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+}

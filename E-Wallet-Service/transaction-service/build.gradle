@@ -1,0 +1,2 @@
+// All plugins, Java toolchain, and dependencies are inherited from the root
+// build.gradle (allprojects block). No module-specific configuration needed.

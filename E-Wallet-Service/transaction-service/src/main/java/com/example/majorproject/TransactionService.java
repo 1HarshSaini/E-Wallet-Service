@@ -37,7 +37,7 @@ public class TransactionService {
 
     public String initiateTransaction(TransactionRequest transactionRequest) throws JsonProcessingException {
 
-        Transaction transaction = Transaction.builder()
+                Transaction transaction = Transaction.builder()
                 .amount(transactionRequest.getAmount())
                 .fromUser(transactionRequest.getFromUser())
                 .toUser(transactionRequest.getToUser())
