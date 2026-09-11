@@ -2,7 +2,9 @@ package com.example.majorproject;
 
 import lombok.*;
 
-import jakarta.persistence.*;
+
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Getter
