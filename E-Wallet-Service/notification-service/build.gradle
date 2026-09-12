@@ -1,5 +1,21 @@
-// Base plugins, Java toolchain, and shared dependencies are inherited from the
-// root build.gradle (allprojects block). This module adds mail support.
+plugins {
+    id 'org.springframework.boot'
+}
+
 dependencies {
+
+    implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
 }
