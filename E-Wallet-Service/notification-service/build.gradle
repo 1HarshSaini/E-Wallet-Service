@@ -4,18 +4,31 @@ plugins {
 
 dependencies {
 
+    implementation('com.googlecode.json-simple:json-simple:1.1') {
+        exclude group: 'junit', module: 'junit'
+    }
+
+    // Kafka
     implementation 'org.springframework.kafka:spring-kafka'
+
+    // Email
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
-
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
 
-    // Testing
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+    // MySQL
     runtimeOnly 'com.mysql:mysql-connector-j'
 
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }

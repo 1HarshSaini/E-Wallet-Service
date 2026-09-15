@@ -1,2 +1,41 @@
-// All plugins, Java toolchain, and dependencies are inherited from the root
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+
+    implementation('com.googlecode.json-simple:json-simple:1.1') {
+        exclude group: 'junit', module: 'junit'
+    }
+
+    // REST API
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // MySQL
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // Kafka
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    // Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}// All plugins, Java toolchain, and dependencies are inherited from the root
 // build.gradle (allprojects block). No module-specific configuration needed.

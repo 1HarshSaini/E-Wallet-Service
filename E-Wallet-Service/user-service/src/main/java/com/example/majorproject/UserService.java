@@ -1,5 +1,6 @@
 package com.example.majorproject;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
@@ -28,13 +29,15 @@ public class UserService {
     ObjectMapper objectMapper;
 
     public User getUser(String userId){
-        User user = userCacheRepository.getUser(userId);
-        if(user == null){
-            user = userRepository.findByUserId(userId);
-            userCacheRepository.addUser(user);
-        }
-
-        return user;
+//        User user = userCacheRepository.getUser(userId);
+//        if(user == null){
+//            user = userRepository.findByUserId(userId);
+//            userCacheRepository.addUser(user);
+//        }
+//
+//        return user;
+        System.out.println("RETURN");
+        return null;
     }
 
     public void addUser(User user) throws JsonProcessingException {
